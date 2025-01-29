@@ -26,4 +26,8 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
 
+My work:
+
+Recurrence relation: $T(n)$ = 3$T(n/3)$ This is the relation because if every time the input n is split three ways then its just three iterations of a third of n. So im going to go ahead and say that $T(n)$ = $T(n)$ because when we remove constants thats what we get. after that i am going to say that the final $\Theta$ complexity = $\Theta$(n)
+
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
