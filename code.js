@@ -7,8 +7,6 @@ function divideAndConquerSum(a) {
         return 0;
     } else if (length == 1) {
         return a[0];
-    } else if (length == 2) { //this isnt needed but should massivly reduce the ammount of recursive calls needed (i think :) )
-        return a[0] + a[1];
     }
 
     //we need to find the two points where we split the array round.
@@ -21,96 +19,6 @@ function divideAndConquerSum(a) {
     //divide the arrays in three parts
     return divideAndConquerSum(a.slice(0, midpointleft)) + divideAndConquerSum(a.slice(midpointleft, midpointright)) + divideAndConquerSum(a.slice(midpointright));
 }
-
-
-// great timer class, can start() stop() reset() and getTime()
-class Timer {
-    constructor () {
-      this.isRunning = false;
-      this.startTime = 0;
-      this.overallTime = 0;
-    }
-  
-    _getTimeElapsedSinceLastStart () {
-      if (!this.startTime) {
-        return 0;
-      }
-    
-      return Date.now() - this.startTime;
-    }
-  
-    start () {
-      if (this.isRunning) {
-        return console.error('Timer is already running');
-      }
-  
-      this.isRunning = true;
-  
-      this.startTime = Date.now();
-    }
-  
-    stop () {
-      if (!this.isRunning) {
-        return console.error('Timer is already stopped');
-      }
-  
-      this.isRunning = false;
-  
-      this.overallTime = this.overallTime + this._getTimeElapsedSinceLastStart();
-    }
-  
-    reset () {
-      this.overallTime = 0;
-  
-      if (this.isRunning) {
-        this.startTime = Date.now();
-        return;
-      }
-  
-      this.startTime = 0;
-    }
-  
-    getTime () {
-      if (!this.startTime) {
-        return 0;
-      }
-  
-      if (this.isRunning) {
-        return this.overallTime + this._getTimeElapsedSinceLastStart();
-      }
-  
-      return this.overallTime;
-    }
-  }
-
-
-var random = [];
-for (var i = 0; i < 100000000; i++){
-    random.push(Math.floor(Math.random() * 10));
-}
-
-function iterativesum(b) {
-    var sum = 0;
-    for (var i = 0; i < b.length; i++){
-        sum += b[i];
-    }
-    return sum;
-}
-
-const timer = new Timer();
-  timer.start();
-  setInterval(() => {
-    const timeInSeconds = Math.round(timer.getTime() / 1000);
-    document.getElementById('time').innerText = timeInSeconds;
-  }, 100)
-
-console.log(iterativesum(random));
-console.log("time = " + timer.getTime());
-
-timer.reset();
-console.log(divideAndConquerSum(random));
-console.log("time = " + timer.getTime());
-timer.stop();
 
 
 //some of my test cases
