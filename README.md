@@ -28,6 +28,8 @@ most important part. Add your answer to this markdown file.
 
 My work:
 
-Recurrence relation: Alright so I think i found my mistake. There is a constant factor because thats just how adding everthing in an array is. But because of the divide and conqure portion of the algorithm when doing the math we end up solving a sumation just like we did for the binary sorting exersise. When solved we get a final complexity for the recursive portion of the program being log(n) which we need to add the linear portion back to making the final recurrence relation equal to $T(n)$ = nlog(n). 
+I added the relation? im sorry for all the pings, i hope this is the last time!
+
+Recurrence relation: T(n)=3T(n/3)+O(n), Alright so I think i found my mistake. There is a constant factor because thats just how adding everthing in an array is. But because of the divide and conqure portion of the algorithm when doing the math we end up solving a sumation just like we did for the binary sorting exersise. When solved we get a final complexity for the recursive portion of the program being log(n) which we need to add the linear portion back to making the final recurrence relation equal to $T(n)$ = nlog(n). 
 
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
