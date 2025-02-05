@@ -27,22 +27,22 @@ Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
 
 My work:
-
+ (i added O(1) to account for the constant work involved with addition at each recursion step)
 Recurrence relation:
-T(n) =  {1              if n <=1        }
-        {3T(n/3)    if n > 1        }
+T(n) =  {1                 if n <=1        }
+        {3T(n/3) + O(1)    if n > 1        }
 
 
-T(n)= 3T(n/3)
-    = 9T(n/9)
-    = 27T(n/27)
+T(n)= 3T(n/3)+ O(1)
+    = 9T(n/9)+ 3O(1)
+    = 27T(n/27)+ 9O(1)
     = 
     ...
-    = 3^iT(n / 3^i)
+    = 3^iT(n / 3^i) + 3^iO(1)
 
 for i = log_3(n)
 
-    = nT(1) ϵ Θ(n)
+    = nT(1) + nO(1) ϵ Θ(n)
 
 
 
