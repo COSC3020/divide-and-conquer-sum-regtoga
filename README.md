@@ -44,11 +44,17 @@ T(n)= 3T(n/3) + c
     ...
     = 3^iT(n / 3^i) + $\sum_{k=0}^{i-1} c/3^k$.
 
-for i = log_3(n) and we can ingnore the sumation because its of a constant value
+for i = log_3(n)
 
-this equates out to:
+the sumation becomes:
+    $\sum_{k=0}^{log_3(n)-1} n/3^k$.
+    = n + n/3 + n/9 + n/27 + ... + n/3^log_3(n)-1
+    = n(1 + 1/3 + 1/9 + 1/27 + ... + 1/3^log_3(n)-1)
 
-    = nT(1) ϵ Θ(n)
+this i brought back my evaluation for the sumation? but ignoring constants it doesnt change anyting?
+
+this equates out to 1.5
+    = nT(1) + 1.5n = n + n == 2n ϵ Θ(n)
 
 This function makes since to me to be linear because while we are dividing and conquring, we are still adding all the indecies of the array up one by one. its essentially a for loop with extra steps and overhead of recursion. That is why it makes since to be linear, its not like we are doing less work, if anything we are doing more.
 
