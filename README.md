@@ -27,32 +27,29 @@ Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
 
 My work:
- The reason i added n this time is because when slicing the array 
+
+1. 1 is a constant factor that happens when the base case is reached,
+2. 3T(n/3) + c is what happens otherwise, the 3T(n/3) is here because at each recursion step we are dividing the input n up into three smaller arrays then passing them back though the function. the c is here just to show that i understand that there is a constant ammount of work happening at each step, but in the end i 
+end up ignoring it because afterall it is insignificant asymtopticly.
+
 Recurrence relation:
 T(n) =  
 {1              if n <=1     }
-{3T(n/3) + n    if n > 1     }
+{3T(n/3) + c    if n > 1     }
 
 
-T(n)= 3T(n/3) + n
-    = 9T(n/9) + n + n/3
-    = 27T(n/27) + n + n/3 + n/9
+T(n)= 3T(n/3) + c
+    = 9T(n/9) + c + c/3
+    = 27T(n/27) + c + c/3 + c/9
     ...
-    = 3^iT(n / 3^i) + $\sum_{k=0}^{i-1} n/3^k$.
+    = 3^iT(n / 3^i) + $\sum_{k=0}^{i-1} c/3^k$.
 
-for i = log_3(n)
+for i = log_3(n) and we can ingnore the sumation because its of a constant value
 
-the sumation becomes:
-    $\sum_{k=0}^{log_3(n)-1} n/3^k$.
+this equates out to:
 
-    = n + n/3 + n/9 + n/27 + ... + n/3^log_3(n)-1
+    = nT(1) ϵ Θ(n)
 
-    = n(1 + 1/3 + 1/9 + 1/27 + ... + 1/3^log_3(n)-1)
-
-this equates out to 1.5
-
-    = nT(1) + n + 1.5N + log(n) ϵ Θ(nlog(n))
-
-
+This function makes since to me to be linear because while we are dividing and conquring, we are still adding all the indecies of the array up one by one. its essentially a for loop with extra steps and overhead of recursion. That is why it makes since to be linear, its not like we are doing less work, if anything we are doing more.
 
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
